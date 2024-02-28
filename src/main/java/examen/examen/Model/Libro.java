@@ -2,6 +2,7 @@ package examen.examen.Model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -12,7 +13,8 @@ public class Libro {
 
     private String nombre;
 
-    private Date publicacion;
+    @Column(columnDefinition = "TIMESTAMP DEFAULT NOW()", insertable = false)
+    private LocalDateTime createdAt;
 
     private String autor;
 
@@ -35,12 +37,12 @@ public class Libro {
         this.nombre = nombre;
     }
 
-    public Date getPublicacion() {
-        return publicacion;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
-    public void setPublicacion(Date publicacion) {
-        this.publicacion = publicacion;
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 
     public String getAutor() {

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/libros")
@@ -33,5 +34,10 @@ public class LibroController {
     @DeleteMapping("/{id}")
     public void deleteLibro(@PathVariable Long id) {
         libroService.deleteLibro(id);
+    }
+
+    @GetMapping("/PublishDate")
+    public Optional<Libro> getLibrosOrderedByPublishDate() {
+        return libroService.getLibrosOrderedByPublishDate();
     }
 }
