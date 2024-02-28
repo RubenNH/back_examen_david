@@ -40,4 +40,14 @@ public class LibroController {
     public Optional<Libro> getLibrosOrderedByPublishDate() {
         return libroService.getLibrosOrderedByPublishDate();
     }
+
+    @GetMapping("/autor")
+    public Optional<Libro> getLibrosOrderedByAutor(){
+        return libroService.getLibroOrderByAutor();
+    }
+
+    @GetMapping("/imagen")
+    public Optional<Libro> getByOrderImage(){
+        return libroService.getOrderByImage();
+    }
 }

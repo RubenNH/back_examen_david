@@ -5,6 +5,7 @@ import examen.examen.Repository.LibroRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,5 +54,12 @@ public class LibroService {
         return libroRepo.findAllByOrderByCreatedAtDesc();
     }
 
+    public Optional<Libro> getLibroOrderByAutor(){
+        return libroRepo.findAllByOrderByAutorDesc();
+    }
+
+    public Optional<Libro> getOrderByImage(){
+        return libroRepo.findAllByImagenIsNotNullOrderByImagenDesc();
+    }
 
 }
