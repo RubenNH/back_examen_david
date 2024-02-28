@@ -50,15 +50,15 @@ public class LibroService {
         }
     }
 
-    public Optional<Libro> getLibrosOrderedByPublishDate() {
+    public List<Libro> getLibrosOrderedByPublishDate() {
         return libroRepo.findAllByOrderByCreatedAtDesc();
     }
 
-    public Optional<Libro> getLibroOrderByAutor(){
+    public List<Libro> getLibroOrderByAutor(){
         return libroRepo.findAllByOrderByAutorDesc();
     }
 
-    public Optional<Libro> getOrderByImage(){
+    public List<Libro> getOrderByImage(){
         return libroRepo.findAllByImagenIsNotNullOrderByImagenDesc();
     }
 

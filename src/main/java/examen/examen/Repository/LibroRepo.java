@@ -9,10 +9,10 @@ import java.util.Optional;
 
 public interface LibroRepo extends JpaRepository<Libro, Long> {
 
-    Optional<Libro> findAllByOrderByCreatedAtDesc();
+    List<Libro> findAllByOrderByCreatedAtDesc();
 
-    Optional<Libro> findAllByOrderByAutorDesc();
+    List<Libro> findAllByOrderByAutorDesc();
 
     @Query("SELECT l FROM Libro l WHERE l.imagen IS NOT NULL AND l.imagen <> '' ORDER BY l.imagen DESC")
-    Optional<Libro> findAllByImagenIsNotNullOrderByImagenDesc();
+    List<Libro> findAllByImagenIsNotNullOrderByImagenDesc();
 }

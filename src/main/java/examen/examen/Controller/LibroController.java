@@ -37,17 +37,17 @@ public class LibroController {
     }
 
     @GetMapping("/PublishDate")
-    public Optional<Libro> getLibrosOrderedByPublishDate() {
+    public List<Libro> getLibrosOrderedByPublishDate() {
         return libroService.getLibrosOrderedByPublishDate();
     }
 
     @GetMapping("/autor")
-    public Optional<Libro> getLibrosOrderedByAutor(){
+    public List<Libro> getLibrosOrderedByAutor(){
         return libroService.getLibroOrderByAutor();
     }
 
     @GetMapping("/imagen")
-    public Optional<Libro> getByOrderImage(){
+    public List<Libro> getByOrderImage(){
         return libroService.getOrderByImage();
     }
 }
